@@ -45,7 +45,7 @@ const register = async (req, res) => {
   const { name, username, password } = req.body;
 
   try {
-    const existingUser = await User.findOne({ userName });
+    const existingUser = await User.findOne({ username });
     if (existingUser) {
       return res
         .status(httpStatus.FOUND)
