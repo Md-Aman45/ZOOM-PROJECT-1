@@ -546,23 +546,51 @@ export default function VideoMeetComponent() {
         
             <div>
 
-                <h2>Enter into Lobby</h2>
+                {/* <h2>Enter into Lobby</h2>
                 <TextField id="outlined-basic" label="Username" value={username} onChange={e => setUsername(e.target.value)} variant="outlined" />
-                <Button variant="contained" onClick={connect}>Connect</Button>
+                <Button variant="contained" onClick={connect}>Connect</Button> */}
+
+                <div className={styles.container}>
+  <div className={styles.formSection}>
+    <h2>Enter into Lobby</h2>
+    <TextField
+      className={styles.input}
+      id="outlined-basic"
+      label="Username"
+      variant="outlined"
+      value={username}
+      onChange={(e) => setUsername(e.target.value)}
+    />
+    <Button className={styles.button} variant="contained" onClick={connect}>
+      Connect
+    </Button>
+  </div>
+
+  <div className={styles.videoSection}>
+    <video
+      ref={localVideoRef}
+      className={styles.video}
+      autoPlay
+      muted
+      playsInline
+    />
+  </div>
+</div>
 
 
 
-        <div>
+
+        {/* <div>
 
                 <video ref={localVideoRef} autoPlay muted></video>
 
-        </div>
+        </div> */}
 
             </div> : 
             
                 <div className={styles.meetVideoContainer}>
 
-                 <div className={styles.chatRoom}>
+                 {/* <div className={styles.chatRoom}>
   <div className={styles.chatHeader}>
     <Typography variant="h6">Chat</Typography>
   </div>
@@ -596,9 +624,9 @@ export default function VideoMeetComponent() {
       <SendIcon />
     </IconButton>
   </div>
-</div>
+</div> */}
 
-                 {/* {showModel ? <div className={styles.chatRoom}>
+                 {showModel ? <div className={styles.chatRoom}>
                      <div className={styles.chatContainer}>
                       <h1>Chat</h1>
 
@@ -624,14 +652,14 @@ export default function VideoMeetComponent() {
 
 
                       <TextField value={message} onChange={(e) => setMessage(e.target.value)} id="outlined-basic" label="Enter Your Chat" variant="outlined" />
-                      <Button variant='contained' onClick={sendMessage}>Send</Button> */}
+                      <Button variant='contained' onClick={sendMessage}>Send</Button>
 
 
 
-                     {/* </div>
+                     </div>
                     </div>
 
-                  </div> : <></> } */}
+                  </div> : <></> }
 
                     <div className={styles.buttonContainers}>
 
