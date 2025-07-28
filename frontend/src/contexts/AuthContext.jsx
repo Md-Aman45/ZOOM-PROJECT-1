@@ -98,8 +98,14 @@ export const AuthProvider = ({ children }) => {
 
 
 
+
+
+
+
+
+
     const data = {
-        userData, setUserData, addToUserHistory, getHistoryOfUser, handleRegister, handleLogin
+        userData, setUserData, addToUserHistory, getHistoryOfUser, handleRegister, handleLogin,
     }
 
 

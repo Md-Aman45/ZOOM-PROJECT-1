@@ -24,6 +24,7 @@ export default function History() {
         const fetchHistory = async () => {
             try {
                 const history = await getHistoryOfUser();
+                console.log("Fetched history:", history); // Debug output
                 setMeetings(history);
             } catch {
                 // IMPLEMENT SNACKBAR

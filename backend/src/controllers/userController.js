@@ -2,6 +2,7 @@ import httpStatus from "http-status";
 import { User } from "../models/userModel.js";
 import bcrypt, { hash } from "bcrypt";
 import crypto from "crypto";
+import { Meeting } from "../models/meetingModel.js";
 
 
 
@@ -101,6 +102,10 @@ const addToHistory = async (req, res) => {
         res.json({ message: `Something went wrong ${e}` })
     }
 }
+
+
+
+
 
 
 export { login, register, getUserHistory, addToHistory };

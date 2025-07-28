@@ -12,6 +12,10 @@ import ScreenShareIcon from '@mui/icons-material/ScreenShare';
 import StopScreenShareIcon from '@mui/icons-material/StopScreenShare';
 import ChatIcon from '@mui/icons-material/Chat'
 import { Link, useNavigate } from 'react-router-dom'
+import { Typography } from '@mui/material';
+import SendIcon from '@mui/icons-material/Send';
+
+
 
 
 const server_url = "http://localhost:8000";
@@ -558,8 +562,43 @@ export default function VideoMeetComponent() {
             
                 <div className={styles.meetVideoContainer}>
 
-                 
-                 {showModel ? <div className={styles.chatRoom}>
+                 <div className={styles.chatRoom}>
+  <div className={styles.chatHeader}>
+    <Typography variant="h6">Chat</Typography>
+  </div>
+
+  <div className={styles.chattingDisplay}>
+    {messages.map((msg, index) => {
+      const isSelf = msg.sender === username;
+      return (
+        <div
+          key={index}
+          className={`${styles.chatBubble} ${isSelf ? styles.self : styles.other}`}
+        >
+          <div className={styles.sender}>{msg.sender}</div>
+          <div className={styles.message}>{msg.data}</div>
+        </div>
+      );
+    })}
+  </div>
+
+  <div className={styles.chattingArea}>
+    <TextField
+      placeholder="Type your message..."
+      variant="outlined"
+      size="small"
+      fullWidth
+      value={message}
+      onChange={(e) => setMessage(e.target.value)}
+      onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
+    />
+    <IconButton color="primary" onClick={sendMessage}>
+      <SendIcon />
+    </IconButton>
+  </div>
+</div>
+
+                 {/* {showModel ? <div className={styles.chatRoom}>
                      <div className={styles.chatContainer}>
                       <h1>Chat</h1>
 
@@ -574,6 +613,7 @@ export default function VideoMeetComponent() {
                                             <p style={{ fontWeight: "bold" }}>{item.sender}</p>
                                             <p>{item.data}</p>
                                         </div>
+
                                     )
                                 }) : <p>No Messages Yet</p>}
 
@@ -584,20 +624,24 @@ export default function VideoMeetComponent() {
 
 
                       <TextField value={message} onChange={(e) => setMessage(e.target.value)} id="outlined-basic" label="Enter Your Chat" variant="outlined" />
-                      <Button variant='contained' onClick={sendMessage}>Send</Button>
+                      <Button variant='contained' onClick={sendMessage}>Send</Button> */}
 
 
 
-                     </div>
+                     {/* </div>
                     </div>
 
-                  </div> : <></> }
+                  </div> : <></> } */}
 
                     <div className={styles.buttonContainers}>
 
-                        <IconButton onClick={handleVideo} style={{color: "white"}}>
+                        {/* <IconButton onClick={handleVideo} style={{color: "white"}}>
                             {(video === true) ? <VideocamIcon /> : <VideocamOffIcon />}
-                        </IconButton>
+                        </IconButton> */}
+
+                        <IconButton onClick={handleVideo} sx={{ color: "white", bgcolor: "#444", '&:hover': { bgcolor: "#555" } }}>
+  {video === true ? <VideocamIcon /> : <VideocamOffIcon />}
+</IconButton>
 
                         <IconButton onClick={handleEndCall} style={{ color: "red" }}>
                             <CallEndIcon  />

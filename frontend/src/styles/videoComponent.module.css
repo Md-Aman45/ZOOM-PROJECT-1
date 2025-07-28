@@ -1,4 +1,4 @@
-.meetVideoContainer {
+/* .meetVideoContainer {
     position: relative;
     height: 100vh;
     background: rgb(1, 4, 48);
@@ -58,4 +58,152 @@
 .chattingArea {
     position: absolute;
     bottom: 0;
+} */
+
+
+.meetVideoContainer {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  background-color: #1e1e1e;
+  color: white;
+  overflow: hidden;
+  position: relative;
+}
+
+.conferenceView {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  padding: 16px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.conferenceView video {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+  background: black;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.meetUserVideo {
+  position: fixed;
+  bottom: 100px;
+  right: 16px;
+  width: 160px;
+  height: 120px;
+  border-radius: 12px;
+  border: 2px solid white;
+  object-fit: cover;
+  z-index: 10;
+}
+
+.buttonContainers {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 16px;
+  z-index: 10;
+}
+
+.chatRoom {
+  width: 100%;
+  max-width: 350px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  border-left: 1px solid #ddd;
+  padding: 12px;
+}
+
+.chatHeader {
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 10px;
+}
+
+.chatContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.chattingDisplay {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.chattingDisplay p {
+  margin: 4px 0;
+}
+
+.chattingArea {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.chatBubble {
+  max-width: 75%;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background-color: #e6f0ff;
+  color: #333;
+  word-wrap: break-word;
+  font-size: 14px;
+}
+
+.self {
+  align-self: flex-end;
+  background-color: #cce5ff;
+}
+
+.other {
+  align-self: flex-start;
+  background-color: #f1f1f1;
+}
+
+.sender {
+  font-size: 11px;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.message {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.chattingArea .MuiTextField-root {
+  flex: 1;
+}
+
+.lobbyContainer {
+  height: 100vh;
+  background-color: #121212;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.lobbyContainer video {
+  margin-top: 16px;
+  border-radius: 12px;
+  width: 320px;
+  height: auto;
+  border: 2px solid #555;
 }
