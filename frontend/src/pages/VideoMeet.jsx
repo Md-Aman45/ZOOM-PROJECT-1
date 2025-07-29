@@ -48,7 +48,7 @@ export default function VideoMeetComponent() {
 
     let [screen, setScreen] = useState();
 
-    let [showModel, setModel] = useState(true);
+    let [showModel, setModel] = useState(false);
 
     let [screenAvailable, setScreenAvailable] = useState();
 
