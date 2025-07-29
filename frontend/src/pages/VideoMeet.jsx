@@ -14,11 +14,12 @@ import ChatIcon from '@mui/icons-material/Chat'
 import { Link, useNavigate } from 'react-router-dom'
 import { Typography } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
+import server from '../environment';
 
 
 
 
-const server_url = "http://localhost:8000";
+const server_url = server; // Use the production server URL from environment.js
 
 var connections = {};
 
