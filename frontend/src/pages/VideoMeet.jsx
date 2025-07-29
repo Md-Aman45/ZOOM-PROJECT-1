@@ -574,6 +574,13 @@ export default function VideoMeetComponent() {
       autoPlay
       muted
       playsInline
+      style={{
+    width: '100%',
+    maxWidth: '600px',
+    height: 'auto',
+    borderRadius: '10px',
+    objectFit: 'cover'
+  }}
     />
   </div>
 </div>
