@@ -575,11 +575,13 @@ export default function VideoMeetComponent() {
       muted
       playsInline
       style={{
-    width: '100%',
-    maxWidth: '600px',
-    height: 'auto',
-    borderRadius: '10px',
-    objectFit: 'cover'
+    width: "320px",
+    height: "180px",
+    borderRadius: "12px",
+    backgroundColor: "black",
+    objectFit: "cover",
+    boxShadow: "0 0 10px rgba(0,0,0,0.5)",
+
   }}
     />
   </div>

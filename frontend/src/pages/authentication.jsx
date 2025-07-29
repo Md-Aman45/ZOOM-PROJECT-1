@@ -196,7 +196,7 @@ import { AuthContext } from '../contexts/AuthContext';
 const defaultTheme = createTheme();
 
 const backgrounds = [
-  "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=1470&q=80",
+  "https://images.unsplash.com/photo-1588873281272-14886ba1f737?q=80&w=2650&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 ];
 
 
